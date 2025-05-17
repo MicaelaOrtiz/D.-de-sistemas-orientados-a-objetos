@@ -1,0 +1,27 @@
+Trabajo Practico
+- Modelar parte de una realidad de un sistema
+- Identificando Entidades y Atributos de entidades
+- Identificar Abstracción y Herencia
+- Graficar / Crear bullets con cada ejemplo
+
+Entidades y Atributos
+Animal                Dueño       Veterinario      Consulta
+ID_Animal             ID_Dueño    ID_veterinario   ID_Consulta
+Nombre                Nombre      Nombre           Fecha
+Especie               Apellido    Apellido         Motivo
+Raza                  Teléfono    Matricula        Diagnostico
+Fecha de nacimiento   Dirección   Especialidad     Tratamiento
+Peso                  Email       Telefono         ID_Animal (FK)
+                                                  ID_Veterinario (FK)
+
+Herencia
+Identificamos herencia en los empleados de la clínica:
+
+Empleado (Entidad general)      Veterinario (hereda de Empleado)     
+ID_Empleado                     Matricula
+Nombre                          especialidad
+Apellido
+Teléfono
+Dirección
+
+
