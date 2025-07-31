@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Salas Disponibles{% endblock %}
+
+{% block content %}
+<h2>Salas Disponibles</h2>
+<ul>
+    {% for sala in salas %}
+        <li>{{ sala.name }} (Capacidad: {{ sala.capacity }})</li>
+    {% endfor %}
+</ul>
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}

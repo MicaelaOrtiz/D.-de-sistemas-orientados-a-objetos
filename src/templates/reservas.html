@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Listado de Reservas{% endblock %}
+
+{% block content %}
+<h2>Reservas</h2>
+<ul>
+    {% for r in reservas %}
+        <li>
+            Usuario: {{ r.user_name }} | Sala: {{ r.room.name }} | 
+            Inicio: {{ r.start_time.strftime('%Y-%m-%d %H:%M') }} | 
+            Fin: {{ r.end_time.strftime('%Y-%m-%d %H:%M') }}
+        </li>
+    {% else %}
+        <p>No hay reservas registradas.</p>
+    {% endfor %}
+</ul>
+<a href="{{ url_for('nueva_reserva') }}" class="enlace-blanco">Crear nueva reserva</a>
+{% endblock %}
+{% block scripts %}
+<script>
+    // Aquí podés agregar scripts específicos para esta página si los necesitás
+</script>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Nueva Reserva{% endblock %}
+
+{% block content %}
+<h2>Crear Nueva Reserva</h2>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul style="color: red;">
+      {% for message in messages %}
+        <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+<form method="post">
+    <label for="user_name">Nombre del Usuario:</label><br>
+    <input type="text" id="user_name" name="user_name" required><br><br>
+
+    <label for="room_name">Sala:</label><br>
+    <select id="room_name" name="room_name" required>
+        {% for sala in salas %}
+            <option value="{{ sala.name }}">{{ sala.name }} (Capacidad: {{ sala.capacity }})</option>
+        {% endfor %}
+    </select><br><br>
+
+    <label for="start_time">Hora de inicio:</label><br>
+    <input type="datetime-local" id="start_time" name="start_time" required><br><br>
+
+    <label for="end_time">Hora de fin:</label><br>
+    <input type="datetime-local" id="end_time" name="end_time" required><br><br>
+
+    <button type="submit">Reservar</button>
+</form>
+<a href="{{ url_for('listar_reservas') }}">Volver a Reservas</a>
+{% endblock %}
