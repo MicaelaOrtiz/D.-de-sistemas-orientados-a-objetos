@@ -1,0 +1,19 @@
+class Reporte:
+    def obtener_datos(self):
+        # Simula datos fijos (podría ser de un archivo o BD)
+        return [10, 20, 30, 40]
+
+    def procesar_datos(self, datos):
+        # Ejemplo: calcular el promedio
+        return sum(datos) / len(datos)
+
+    def generar_reporte(self, resultado):
+        # Genera un string en formato de texto
+        return f"El promedio es: {resultado}"
+
+    def guardar_reporte(self, reporte):
+        # Guarda en un archivo
+        with open("reporte.txt", "w") as f:
+            f.write(reporte)  
+            
+# clase que viole SRP 
